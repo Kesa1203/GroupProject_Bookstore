@@ -33,23 +33,23 @@
         <mxCell id="g-SuGQ34lXMrxu17Pbmb-7" value="publisher&lt;div&gt;publisher_id(PK)&lt;/div&gt;&lt;div&gt;name&lt;/div&gt;&lt;div&gt;address_id(FK links to addresses)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="42.5" y="130" width="145" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="g-SuGQ34lXMrxu17Pbmb-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="385" y="30" width="120" height="60" as="geometry" />
+        <mxCell id="g-SuGQ34lXMrxu17Pbmb-8" value="cust_order&lt;div&gt;order_id(PK)&lt;/div&gt;&lt;div&gt;customer_id(FK links to customer)&lt;/div&gt;&lt;div&gt;order_date&lt;/div&gt;&lt;div&gt;shipping_method_id(FK links to shipping method)&lt;/div&gt;&lt;div&gt;order_status_id(FK links to order status)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="-50" width="145" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="g-SuGQ34lXMrxu17Pbmb-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="425" y="140" width="120" height="60" as="geometry" />
+        <mxCell id="g-SuGQ34lXMrxu17Pbmb-9" value="order_line&lt;div&gt;order_line_id(PK)&lt;/div&gt;&lt;div&gt;order_id(FK links to cust_order)&lt;/div&gt;&lt;div&gt;book_id(FK links to book)&lt;/div&gt;&lt;div&gt;quantity&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="140" width="155" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="g-SuGQ34lXMrxu17Pbmb-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="425" y="240" width="120" height="60" as="geometry" />
+        <mxCell id="g-SuGQ34lXMrxu17Pbmb-10" value="shipping method&lt;div&gt;shipping_method_id(PK)&lt;/div&gt;&lt;div&gt;method_name&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="240" width="145" height="70" as="geometry" />
         </mxCell>
         <mxCell id="g-SuGQ34lXMrxu17Pbmb-11" value="address&lt;div&gt;address_id(PK)&lt;/div&gt;&lt;div&gt;Street&lt;/div&gt;&lt;div&gt;city&lt;/div&gt;&lt;div&gt;state&lt;/div&gt;&lt;div&gt;country_id(FK links to country)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="205" y="260" width="180" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="g-SuGQ34lXMrxu17Pbmb-12" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="425" y="330" width="120" height="60" as="geometry" />
+        <mxCell id="g-SuGQ34lXMrxu17Pbmb-12" value="order history&lt;div&gt;history_id(PK)&lt;/div&gt;&lt;div&gt;order_id(FK link to cust_order)&lt;/div&gt;&lt;div&gt;status_id(FK links to order_status)&lt;/div&gt;&lt;div&gt;change_date&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="330" width="155" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="g-SuGQ34lXMrxu17Pbmb-13" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="400" y="420" width="120" height="60" as="geometry" />
+        <mxCell id="g-SuGQ34lXMrxu17Pbmb-13" value="Order_status&lt;div&gt;status_id(PK)&lt;/div&gt;&lt;div&gt;status_name( eg, pening, shipped, delievred)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="440" width="145" height="90" as="geometry" />
         </mxCell>
         <mxCell id="g-SuGQ34lXMrxu17Pbmb-14" value="Country&lt;div&gt;country_id(primary key)&lt;/div&gt;&lt;div&gt;country_name&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="230" y="400" width="140" height="60" as="geometry" />
