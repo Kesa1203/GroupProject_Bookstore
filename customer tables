@@ -1,0 +1,33 @@
+Use BookstoreDB;
+-- 6.customer table --
+CREATE TABLE customer(
+customer_id int Primary key,
+name varchar (30),
+email varchar (50),
+phone int);
+
+-- 7.customer_address --
+CREATE TABLE customer_address(
+customer_id int,
+address_id int,
+foreign key (customer_id) References customer(customer_id),
+foreign key (address_id) References address(address_id));
+
+-- 8.address status --
+CREATE TABLE address_status(
+status_id int Primary key,
+status varchar (3));
+
+-- 9.address --
+CREATE TABLE address(
+address_id int Primary key,
+street varchar(50),
+city varchar(50),
+state varchar(50),
+country_id int,
+Foreign key (country_id) References country(country_id));
+
+-- 10.country --
+Create TABLE country(
+ country_id int Primary key,
+ country_name varchar(50));
