@@ -9,6 +9,9 @@
             <mxPoint x="50" y="-10" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="g-SuGQ34lXMrxu17Pbmb-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="g-SuGQ34lXMrxu17Pbmb-1" target="g-SuGQ34lXMrxu17Pbmb-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="g-SuGQ34lXMrxu17Pbmb-1" value="Book Table&lt;div&gt;Book_id(primary key)&lt;br&gt;title&lt;/div&gt;&lt;div&gt;language_id (foreign key- book language)&lt;/div&gt;&lt;div&gt;publisher_id (Foreign key links to publisher)&lt;/div&gt;&lt;div&gt;Price&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="50" y="-140" width="230" height="130" as="geometry" />
         </mxCell>
@@ -24,8 +27,8 @@
         <mxCell id="g-SuGQ34lXMrxu17Pbmb-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="50" y="380" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="g-SuGQ34lXMrxu17Pbmb-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="210" y="20" width="120" height="60" as="geometry" />
+        <mxCell id="g-SuGQ34lXMrxu17Pbmb-6" value="Book Author table&lt;div&gt;book_id (Foreign key links to book&lt;/div&gt;&lt;div&gt;author_id (FK links to author)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="-120" width="150" height="90" as="geometry" />
         </mxCell>
         <mxCell id="g-SuGQ34lXMrxu17Pbmb-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="365" y="20" width="120" height="60" as="geometry" />
