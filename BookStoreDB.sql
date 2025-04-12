@@ -379,7 +379,94 @@ INSERT INTO order_history (order_id, status_id, change_date) VALUES
 
 
 
+-- BookStore Database SQL Script
+-- Created by: Emmanuel Nyakoe
+-- Date: 2025-04-12
 
+-- =============================================
+-- USER MANAGEMENT SYSTEM
+-- =============================================
+
+-- Administrator account with full privileges
+CREATE USER 'admin_user'@'%' IDENTIFIED BY 'Admin@Secure123';
+GRANT ALL PRIVILEGES ON BookStore.* TO 'admin_user'@'%';
+
+-- Read-only user account for reporting
+CREATE USER 'report_user'@'%' IDENTIFIED BY 'ReadOnly@456';
+GRANT SELECT ON BookStore.* TO 'report_user'@'%';
+
+-- Application user with limited write access
+CREATE USER 'app_user'@'%' IDENTIFIED BY 'AppAccess@789';
+GRANT SELECT, INSERT, UPDATE ON BookStore.* TO 'app_user'@'%';
+
+FLUSH PRIVILEGES;
+
+-- =============================================
+-- DATABASE VALIDATION QUERIES
+-- =============================================
+
+-- 1. Book-Author Relationship Validation
+SELECT b.title AS book_title, a.name AS author_name
+FROM book AS b
+JOIN book_author AS ba ON b.book_id = ba.book_id
+JOIN author AS a ON ba.author_id = a.author_id;
+
+-- 2. Customer Order Tracking
+SELECT o.order_id, o.order_date, c.name AS customer_name, 
+       sm.method_name AS shipping_method, os.status_name AS order_status
+FROM cust_order AS o
+JOIN customer AS c ON o.customer_id = c.customer_id
+JOIN shipping_method AS sm ON o.shipping_method_id = sm.shipping_method_id
+JOIN order_status AS os ON o.status_id = os.status_id;
+
+-- 3. Sales Analysis by Order Status
+SELECT os.status_name, SUM(ol.quantity) AS total_books, 
+       SUM(b.price * ol.quantity) AS total_value
+FROM order_line AS ol
+JOIN cust_order AS o ON ol.order_id = o.order_id
+JOIN order_status AS os ON o.status_id = os.status_id
+JOIN book AS b ON ol.book_id = b.book_id
+GROUP BY os.status_name;
+
+-- 4. Customer Address Verification
+SELECT c.name AS customer_name, a.street, a.city, 
+       a.postal_code, co.country_name, ast.status_name AS address_status
+FROM customer AS c
+JOIN customer_address AS ca ON c.customer_id = ca.customer_id
+JOIN address AS a ON ca.address_id = a.address_id
+JOIN country AS co ON a.country_id = co.country_id
+JOIN address_status AS ast ON ca.status_id = ast.status_id;
+
+-- 5. Order History Audit
+SELECT o.order_id, h.change_date, os.status_name, 
+       TIMESTAMPDIFF(HOUR, o.order_date, h.change_date) AS hours_in_status
+FROM order_history AS h
+JOIN cust_order AS o ON h.order_id = o.order_id
+JOIN order_status AS os ON h.status_id = os.status_id
+ORDER BY h.order_id, h.change_date;
+
+-- 6. Financial Reporting
+SELECT 
+    COUNT(DISTINCT o.customer_id) AS total_customers,
+    COUNT(DISTINCT o.order_id) AS total_orders,
+    SUM(ol.quantity) AS total_books_sold,
+    SUM(b.price * ol.quantity) AS gross_revenue,
+    SUM(sm.cost) AS total_shipping_costs
+FROM cust_order AS o
+JOIN order_line AS ol ON o.order_id = ol.order_id
+JOIN book AS b ON ol.book_id = b.book_id
+JOIN shipping_method AS sm ON o.shipping_method_id = sm.shipping_method_id;
+
+-- 7. Shipping Method Analysis
+SELECT 
+    sm.method_name,
+    COUNT(o.order_id) AS order_count,
+    AVG(TIMESTAMPDIFF(HOUR, o.order_date, 
+        (SELECT MAX(change_date) FROM order_history WHERE order_id = o.order_id))) AS avg_processing_hours
+FROM cust_order AS o
+JOIN shipping_method AS sm ON o.shipping_method_id = sm.shipping_method_id
+GROUP BY sm.method_name
+ORDER BY order_count DESC;
 
 
 
