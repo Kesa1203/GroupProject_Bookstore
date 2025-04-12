@@ -349,36 +349,6 @@ INSERT INTO order_history (order_id, status_id, change_date) VALUES
 (4, 4, '2025-04-04'),
 (5, 5, '2025-04-05');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -- BookStore Database SQL Script
 -- Created by: Emmanuel Nyakoe
 -- Date: 2025-04-12
