@@ -59,6 +59,8 @@ order_history: Tracks order status changes over time.
 
 order_status: Lists possible statuses for an order.
 
+https://github.com/Kesa1203/GroupProject_Bookstore/blob/main/Bookstore.drawio
+
 Installation and Setup
 Step 1: Clone the Repository
 Download or clone the repository containing the SQL scripts:
