@@ -138,6 +138,6 @@ For questions or feedback, feel free to reach out:
 
 Project Owner: Dominik Kean, Sylvester Kesa and Emmanuel Nyaoke
 
-Email: ilsaoltactaiocht@gmail.com, emmanuelnyakoe13@gmail.com, kesasylvesterlee@gmail.com, emmanuelnyakoe13@gmail.com
+Email: ilsaoltactaiocht@gmail.com, emmanuelnyakoe13@gmail.com, kesasylvesterlee@gmail.com,
 
 GitHub: https://github.com/Kesa1203, https://github.com/Wolfeduck90, https://github.com/10974-spec
