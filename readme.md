@@ -108,12 +108,12 @@ For questions or feedback, feel free to reach out:
 
 Dominik Kean
 📧 ilsaoltactaiocht@gmail.com
-🔗 GitHub
+🔗 GitHub : https://github.com/Wolfeduck90
 
 Sylvester Kesa
 📧 kesasylvesterlee@gmail.com
-🔗 GitHub
+🔗 GitHub: https://github.com/Kesa1203
 
 Emmanuel Nyaoke
 📧 emmanuelnyakoe13@gmail.com
-🔗 GitHub
+🔗 GitHub: https://github.com/10974-spec   
